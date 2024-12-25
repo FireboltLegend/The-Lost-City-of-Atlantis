@@ -36,6 +36,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Test Scenes/Test.unity
     guid: 0d2baa45e993b5f459a78d07f0906de3
   - enabled: 1
-    path: Assets/HUD.unity
+    path: Assets/Scenes/UI Scenes/HUD.unity
     guid: fd3e6b5127c1bd34285f58a77193719d
   m_configObjects: {}
