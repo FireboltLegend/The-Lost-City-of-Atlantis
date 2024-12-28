@@ -17,6 +17,7 @@ public class CloudSpawner : MonoBehaviour
             cloud.transform.localScale *= multiplier;
             cloud.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, multiplier - 0.3f);
             cloud.GetComponent<Cloud>().speed = multiplier * 3;
+            cloud.transform.parent = transform;
         }
     }
 
@@ -31,6 +32,7 @@ public class CloudSpawner : MonoBehaviour
             cloud.transform.localScale *= multiplier;
             cloud.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, multiplier - 0.3f);
             cloud.GetComponent<Cloud>().speed = multiplier * 3;
+            cloud.transform.parent = transform;
         }
     }
 }
