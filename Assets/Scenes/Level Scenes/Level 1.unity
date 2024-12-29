@@ -87451,6 +87451,7 @@ GameObject:
   - component: {fileID: 362015093}
   - component: {fileID: 362015092}
   - component: {fileID: 362015095}
+  - component: {fileID: 362015096}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -87526,11 +87527,11 @@ Transform:
   m_GameObject: {fileID: 362015091}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 242.7, y: -10.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1540982036}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &362015095
 MonoBehaviour:
@@ -87576,6 +87577,18 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &362015096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362015091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b6f932532e649188e4097f003b8029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &372719481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88618,7 +88631,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.030149236}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -88629,7 +88642,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.93970156}
   m_EdgeRadius: 0
 --- !u!1001 &549295872
 PrefabInstance:
@@ -90927,7 +90940,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0099193305}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -90938,7 +90951,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.9801613}
   m_EdgeRadius: 0
 --- !u!212 &944195391
 SpriteRenderer:
@@ -94214,11 +94227,10 @@ Transform:
   m_GameObject: {fileID: 1540982033}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.4, y: -1.5, z: 0}
+  m_LocalPosition: {x: 221.6, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 362015094}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1540982037
@@ -94310,12 +94322,16 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 768
+  water:
+    serializedVersion: 2
+    m_Bits: 16
   health: 100
   oxygen: 100
   healthBar: {fileID: 18465008}
   oxygenMeter: {fileID: 1449228280}
---- !u!61 &1540982040
-BoxCollider2D:
+  swimming: 0
+--- !u!58 &1540982040
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94343,22 +94359,12 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.012677193}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.5}
-    newSize: {x: 1, y: 1.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5253544}
-  m_EdgeRadius: 0
+  m_Radius: 0.3
 --- !u!1001 &1542713685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96636,7 +96642,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.02325359}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -96647,7 +96653,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.9534928}
   m_EdgeRadius: 0
 --- !u!1 &2031864054
 GameObject:
@@ -98145,6 +98151,7 @@ SceneRoots:
   - {fileID: 761526479}
   - {fileID: 1660438571}
   - {fileID: 1520018466}
+  - {fileID: 362015094}
   - {fileID: 1540982036}
   - {fileID: 1428703217}
   - {fileID: 1525143177}

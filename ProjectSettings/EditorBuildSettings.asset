@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Level Scenes/Level 1.unity
+    guid: ebc51c18fbf9146abba1301e9063e536
+  - enabled: 1
     path: Assets/2DGamekit/Scenes/Start.unity
     guid: 57df1e417250bc247976c2c0dc088efe
   - enabled: 1
@@ -29,7 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/2DGamekit/Scenes/UI/Loading.unity
     guid: ebc4647ff02971c4ba1b207af066be4d
-  - enabled: 1
+  - enabled: 0
     path: Assets/NewScene.unity
     guid: a341347ecfade124f817cac8ea56a209
   - enabled: 1
