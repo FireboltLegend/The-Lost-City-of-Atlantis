@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -51,6 +52,11 @@ public class PlayerController : MonoBehaviour
             health -= 10 * Time.deltaTime;
         healthBar.value = health / 100;
         oxygenMeter.value = oxygen / 100;
+
+        if(health <= 0)
+        {
+            SceneManager.LoadScene("Death");
+        }
     }
 
     private void FixedUpdate()

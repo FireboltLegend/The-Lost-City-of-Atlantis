@@ -45,6 +45,10 @@ public class QuickInventorySelection : MonoBehaviour
 			removeSprites();
 			inventoryImages[4].GetComponent<UnityEngine.UI.Image>().sprite = selBar;
 		}
+		else if(Input.GetKeyDown(KeyCode.I))
+		{
+			removeSprites();
+		}
 	}
 	
 	private void removeSprites()
