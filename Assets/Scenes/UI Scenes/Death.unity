@@ -715,7 +715,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 836090774}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1058986734}
+        m_TargetAssemblyTypeName: DeathSceneManager, Assembly-CSharp
+        m_MethodName: LoadGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &836090774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1051,8 +1063,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1058986732}
   - component: {fileID: 1058986733}
+  - component: {fileID: 1058986734}
   m_Layer: 0
-  m_Name: Death Sound
+  m_Name: Death Scene Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1067,7 +1080,7 @@ Transform:
   m_GameObject: {fileID: 1058986731}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1009.1378, y: 588.4346, z: -4.7663445}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1169,6 +1182,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1058986734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058986731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7303bd442e1bcc047b45f79de9cba0a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenu: {fileID: 0}
+  loadGameMenu: {fileID: 0}
 --- !u!1 &1651582912
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1422,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1928533259}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1058986734}
+        m_TargetAssemblyTypeName: DeathSceneManager, Assembly-CSharp
+        m_MethodName: BackToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1928533259
 MonoBehaviour:
   m_ObjectHideFlags: 0
