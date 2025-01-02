@@ -6,6 +6,7 @@ public class MenuControl : MonoBehaviour
 {
 	[SerializeField] private GameObject mainMenu;
 	[SerializeField] private GameObject loadGameMenu;
+	[SerializeField] private GameObject controlMenu;
 
 	// Start is called before the first frame update
 	void Start()
@@ -29,6 +30,13 @@ public class MenuControl : MonoBehaviour
 	{
 		mainMenu.SetActive(true);
 		loadGameMenu.SetActive(false);
+		controlMenu.SetActive(false);
+	}
+
+	public void Controls()
+	{
+		mainMenu.SetActive(false);
+		controlMenu.SetActive(true);
 	}
 
 	public void ExitGame()
