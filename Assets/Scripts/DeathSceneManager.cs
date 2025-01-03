@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DeathSceneManager : MonoBehaviour
 {
+	[SerializeField] private GameObject deathGameMenu;
+	[SerializeField] private GameObject loadGameMenu;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -18,7 +20,8 @@ public class DeathSceneManager : MonoBehaviour
 
 	public void LoadGame()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene("Menu 1");
+		deathGameMenu.SetActive(false);
+		loadGameMenu.SetActive(true);
 	}
 
 	public void BackToMainMenu()

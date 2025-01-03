@@ -46,6 +46,11 @@ public class MenuControl : MonoBehaviour
 
 	public void StartGame()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
+		UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
+	}
+
+	public void LoadMainMenu()
+	{
+		UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
 	}
 }
