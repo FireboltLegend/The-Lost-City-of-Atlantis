@@ -1040,9 +1040,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 4441847167379607162}
+        m_TargetAssemblyTypeName: LoadGameManager, Assembly-CSharp
+        m_MethodName: SaveGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6425,3 +6425,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 9016927722410128081}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4441847167379607162 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4649425155672259755, guid: d1b1bc0dc0e8c1b4ab614e30dbffe74b,
+    type: 3}
+  m_PrefabInstance: {fileID: 9016927722410128081}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d3e981e616ee54ca297902170aeed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

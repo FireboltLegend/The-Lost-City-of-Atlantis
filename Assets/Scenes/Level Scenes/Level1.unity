@@ -94327,6 +94327,7 @@ MonoBehaviour:
     m_Bits: 16
   health: 100
   oxygen: 100
+  level: 0
   healthBar: {fileID: 18465008}
   oxygenMeter: {fileID: 1449228280}
   pauseMenu: {fileID: 1974761225}
@@ -94687,6 +94688,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1653914182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1653914183}
+  - component: {fileID: 1653914184}
+  m_Layer: 0
+  m_Name: Level Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1653914183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653914182}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 339.57327, y: 351.80988, z: -7.307117}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1653914184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653914182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49c55e9e5244c44495e5629d245423f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  player: {fileID: 1540982039}
 --- !u!1 &1660438570
 GameObject:
   m_ObjectHideFlags: 0
@@ -96207,6 +96254,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4441847167379607162, guid: f1ae573d5f83e7e478b8253f2acc1285,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1540982039}
     - target: {fileID: 6654574544429678319, guid: f1ae573d5f83e7e478b8253f2acc1285,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -98252,3 +98304,4 @@ SceneRoots:
   - {fileID: 1525143177}
   - {fileID: 814557480}
   - {fileID: 1974761224}
+  - {fileID: 1653914183}
