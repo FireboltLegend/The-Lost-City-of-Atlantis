@@ -52,7 +52,7 @@ public class LoadGameManager : MonoBehaviour
 		if(selSaveFile != null)
 		{
 			PlayerData data = SaveSystem.LoadGame(selSaveFile.GetComponentInChildren<TextMeshProUGUI>().text);
-			SceneManager.LoadScene("Level" + data.level);
+			SceneManager.LoadScene("Level 0" + data.level);
 			if(player == null)
 			{
 				player = FindObjectOfType<PlayerController>();
