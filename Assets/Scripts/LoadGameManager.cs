@@ -53,22 +53,23 @@ public class LoadGameManager : MonoBehaviour
 		{
 			PlayerData data = SaveSystem.LoadGame(selSaveFile.GetComponentInChildren<TextMeshProUGUI>().text);
 			SceneManager.LoadScene("Level 0" + data.level);
-			if(player == null)
+			SceneManager.sceneLoaded += (scene, mode) =>
 			{
 				player = FindObjectOfType<PlayerController>();
-			}
-			if(player != null)
-			{
-				player.level = data.level;
-				Debug.Log(data.position[0] + " " + data.position[1] + " " + data.position[2]);
-				player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
-				player.health = data.health;
-				player.oxygen = data.oxygen;
-			}
-			else
-			{
-				Debug.LogError("Player not found");
-			}
+				if(player != null)
+				{
+					player.level = data.level;
+					Debug.Log(data.position[0] + " " + data.position[1] + " " + data.position[2]);
+					player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
+					player.health = data.health;
+					player.oxygen = data.oxygen;
+				}
+				else
+				{
+					Debug.LogError("Player not found");
+				}
+				SceneManager.sceneLoaded -= (scene, mode) => { }; 
+			};
 		}
 		else
 		{
