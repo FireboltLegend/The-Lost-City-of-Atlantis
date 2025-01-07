@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
 
     public void Damage(float damage)
     {
-        print("player damaged");
+        // print("player damaged");
         if (damageTimer <= 0)
         {
             health -= damage;
