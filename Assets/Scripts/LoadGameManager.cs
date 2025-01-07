@@ -59,7 +59,7 @@ public class LoadGameManager : MonoBehaviour
 				if(player != null)
 				{
 					player.level = data.level;
-					Debug.Log(data.position[0] + " " + data.position[1] + " " + data.position[2]);
+					// Debug.Log(data.position[0] + " " + data.position[1] + " " + data.position[2]);
 					player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
 					player.health = data.health;
 					player.oxygen = data.oxygen;
