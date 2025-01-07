@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float oxygen;
     [SerializeField] private Slider healthBar;
     [SerializeField] private Slider oxygenMeter;
+    [SerializeField] private float invincibilityTime;
+    [SerializeField] public int level;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -24,8 +26,10 @@ public class PlayerController : MonoBehaviour
 
     private float jumpBuffer;
     private float groundedBuffer;
+    private float damageTimer;
 
-    public bool swimming;
+    private bool swimming;
+    private Transform currentPlatform;
 
     private void Start()
     {
@@ -38,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        damageTimer -= Time.deltaTime;
         if (!swimming)
         {
             oxygen = 100;
@@ -53,10 +58,13 @@ public class PlayerController : MonoBehaviour
         healthBar.value = health / 100;
         oxygenMeter.value = oxygen / 100;
 
-        if(health <= 0)
+        if (health <= 0)
         {
             SceneManager.LoadScene("Death");
         }
+
+        if (currentPlatform != null)
+            rb.position += currentPlatform.GetComponent<MovablePlatform>().velocity;
     }
 
     private void FixedUpdate()
@@ -69,6 +77,16 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("Grounded", grounded);
         animator.SetBool("Swimming", swimming);
 
+    }
+
+    public void Damage(float damage)
+    {
+        print("player damaged");
+        if (damageTimer <= 0)
+        {
+            health -= damage;
+            damageTimer = invincibilityTime;
+        }
     }
 
     private void Run()
@@ -143,5 +161,18 @@ public class PlayerController : MonoBehaviour
             swimming = false;
             rb.drag = 0.1f;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 31) //Platform layer
+        {
+            currentPlatform = collision.transform;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        currentPlatform = null;
     }
 }
