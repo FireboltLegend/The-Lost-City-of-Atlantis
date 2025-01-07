@@ -16,13 +16,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Slider oxygenMeter;
     [SerializeField] private float invincibilityTime;
     [SerializeField] public int level;
+	[SerializeField] private GameObject pauseMenu;
 
-    private Rigidbody2D rb;
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
-    private BoxCollider2D boxCollider;
-    private CircleCollider2D circleCollider;
-    private bool grounded;
+	private Rigidbody2D rb;
+	private Animator animator;
+	private SpriteRenderer spriteRenderer;
+	private BoxCollider2D boxCollider;
+	private CircleCollider2D circleCollider;
+	private bool grounded;
 
     private float jumpBuffer;
     private float groundedBuffer;
@@ -31,14 +32,14 @@ public class PlayerController : MonoBehaviour
     private bool swimming;
     private Transform currentPlatform;
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        boxCollider = GetComponent<BoxCollider2D>();
-        circleCollider = GetComponent<CircleCollider2D>();
-    }
+	private void Start()
+	{
+		rb = GetComponent<Rigidbody2D>();
+		animator = GetComponent<Animator>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
+		boxCollider = GetComponent<BoxCollider2D>();
+		circleCollider = GetComponent<CircleCollider2D>();
+	}
 
     private void Update()
     {
@@ -65,19 +66,23 @@ public class PlayerController : MonoBehaviour
 
         if (currentPlatform != null)
             rb.position += currentPlatform.GetComponent<MovablePlatform>().velocity;
-    }
 
-    private void FixedUpdate()
-    {
-        CheckIfInWater();
-        if (swimming)
-            Swim();
-        CheckIfGrounded();
-        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-        animator.SetBool("Grounded", grounded);
-        animator.SetBool("Swimming", swimming);
+		if(Input.GetKeyDown(KeyCode.P))
+		{
+			pauseMenu.SetActive(true);
+		}
+	}
 
-    }
+	private void FixedUpdate()
+	{
+		CheckIfInWater();
+		if (swimming)
+			Swim();
+		CheckIfGrounded();
+		animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+		animator.SetBool("Grounded", grounded);
+		animator.SetBool("Swimming", swimming);
+	}
 
     public void Damage(float damage)
     {
@@ -89,81 +94,86 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Run()
-    {
-        rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
+	public void Resume()
+	{
+		pauseMenu.SetActive(false);
+	}
 
-        groundedBuffer -= Time.deltaTime;
-        jumpBuffer -= Time.deltaTime;
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && jumpBuffer <= 0)
-            jumpBuffer = 0.1f;
+	private void Run()
+	{
+		rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
 
-        if (groundedBuffer > 0 && jumpBuffer > 0)
-        {
-            groundedBuffer = 0;
-            jumpBuffer = 0;
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-        }
-        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W)) && rb.velocity.y > 0)
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 3);
+		groundedBuffer -= Time.deltaTime;
+		jumpBuffer -= Time.deltaTime;
+		if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && jumpBuffer <= 0)
+			jumpBuffer = 0.1f;
 
-        spriteRenderer.flipY = false;
-        if (rb.velocity.x != 0)
-            spriteRenderer.flipX = rb.velocity.x < 0;
-    }
+		if (groundedBuffer > 0 && jumpBuffer > 0)
+		{
+			groundedBuffer = 0;
+			jumpBuffer = 0;
+			rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+		}
+		if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W)) && rb.velocity.y > 0)
+			rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 3);
 
-    private void Swim()
-    {
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-        rb.AddForce(input * speed * 5);
+		spriteRenderer.flipY = false;
+		if (rb.velocity.x != 0)
+			spriteRenderer.flipX = rb.velocity.x < 0;
+	}
 
-        animator.speed = 0.5f;
-        if (input.sqrMagnitude == 0)
-            animator.speed = 0;
+	private void Swim()
+	{
+		Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+		rb.AddForce(input * speed * 5);
 
-        if (rb.velocity.sqrMagnitude > 0)
-            rb.rotation = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg - 90;
-        spriteRenderer.flipX = false;
-        if (rb.velocity.x < 0)
-            spriteRenderer.flipX = true;
-    }
+		animator.speed = 0.5f;
+		if (input.sqrMagnitude == 0)
+			animator.speed = 0;
 
-    private void CheckIfGrounded()
-    {
-        grounded = false;
-        Collider2D result = Physics2D.OverlapBox(rb.position + new Vector2(-0.05f, -0.75f), new Vector2(0.6f, 0.2f), 0, ground);
-        if (Physics2D.OverlapBox(rb.position + new Vector2(-0.05f, -0.75f), new Vector2(0.6f, 0.2f), 0, ground))
-        {
-            if (!swimming)
-                rb.rotation = 0;
-            grounded = true;
-            groundedBuffer = 0.1f;
-        }
-        if (grounded && !result.isTrigger && jumpBuffer <= 0 && rb.velocity.y < Mathf.Abs(rb.velocity.x) && !swimming)
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-    }
+		if (rb.velocity.sqrMagnitude > 0)
+			rb.rotation = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg - 90;
+		spriteRenderer.flipX = false;
+		if (rb.velocity.x < 0)
+			spriteRenderer.flipX = true;
+	}
 
-    private void CheckIfInWater()
-    {
-        if (Physics2D.OverlapBox((Vector2)transform.position + boxCollider.offset, boxCollider.size, transform.rotation.z, water))
-        {
-            boxCollider.enabled = false;
-            circleCollider.enabled = true;
-            rb.gravityScale = 0.1f;
-            swimming = true;
-            rb.drag = 4;
-        }
-        else
-        {
-            boxCollider.enabled = true;
-            circleCollider.enabled = false;
-            rb.gravityScale = 2;
-            swimming = false;
-            rb.drag = 0.1f;
-        }
-    }
+	private void CheckIfGrounded()
+	{
+		grounded = false;
+		Collider2D result = Physics2D.OverlapBox(rb.position + new Vector2(-0.05f, -0.75f), new Vector2(0.6f, 0.2f), 0, ground);
+		if (Physics2D.OverlapBox(rb.position + new Vector2(-0.05f, -0.75f), new Vector2(0.6f, 0.2f), 0, ground))
+		{
+			if (!swimming)
+				rb.rotation = 0;
+			grounded = true;
+			groundedBuffer = 0.1f;
+		}
+		if (grounded && !result.isTrigger && jumpBuffer <= 0 && rb.velocity.y < Mathf.Abs(rb.velocity.x) && !swimming)
+			rb.velocity = new Vector2(rb.velocity.x, 0);
+	}
 
-    private void OnCollisionEnter2D(Collision2D collision)
+	private void CheckIfInWater()
+	{
+		if (Physics2D.OverlapBox((Vector2)transform.position + boxCollider.offset, boxCollider.size, transform.rotation.z, water))
+		{
+			boxCollider.enabled = false;
+			circleCollider.enabled = true;
+			rb.gravityScale = 0.1f;
+			swimming = true;
+			rb.drag = 4;
+		}
+		else
+		{
+			boxCollider.enabled = true;
+			circleCollider.enabled = false;
+			rb.gravityScale = 2;
+			swimming = false;
+			rb.drag = 0.1f;
+		}
+	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 31) //Platform layer
         {

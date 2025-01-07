@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Level Scenes/Level 01.unity
-    guid: ebc51c18fbf9146abba1301e9063e536
   - enabled: 0
     path: Assets/2DGamekit/Scenes/Start.unity
     guid: 57df1e417250bc247976c2c0dc088efe
@@ -38,13 +35,25 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Test Scenes/Test.unity
     guid: 0d2baa45e993b5f459a78d07f0906de3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UI Scenes/HUD.unity
     guid: fd3e6b5127c1bd34285f58a77193719d
+  - enabled: 0
+    path: Assets/Scenes/Test Scenes/Menu Test.unity
+    guid: b2a358f9003e141d58f49d6faed6369c
+  - enabled: 1
+    path: Assets/Scenes/Level Scenes/Level1.unity
+    guid: ebc51c18fbf9146abba1301e9063e536
+  - enabled: 0
+    path: Assets/Scenes/Test Scenes/Level 4.unity
+    guid: 8987992309ff63d47bd38fe4a2e1f730
+  - enabled: 1
+    path: Assets/Scenes/Menu Scenes/Pause.unity
+    guid: fd4763d44d476c84aa541dc61afe22b1
+  - enabled: 1
+    path: Assets/Scenes/Menu Scenes/Menu.unity
+    guid: b3f41260e86a81847be440fa6122890e
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Death.unity
     guid: 45a31cba8afb10548b4379fc7069a752
-  - enabled: 1
-    path: Assets/Scenes/Level Scenes/Level 02.unity
-    guid: 87456646cebea4968ad374b33ccda225
   m_configObjects: {}
