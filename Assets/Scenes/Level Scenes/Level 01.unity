@@ -87820,6 +87820,21 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 4376024966324482074}
+    - target: {fileID: 6654574544429678319, guid: f1ae573d5f83e7e478b8253f2acc1285,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4376024966324482074}
+    - target: {fileID: 6654574544429678319, guid: f1ae573d5f83e7e478b8253f2acc1285,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654574544429678319, guid: f1ae573d5f83e7e478b8253f2acc1285,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8858220786732473414, guid: f1ae573d5f83e7e478b8253f2acc1285,
         type: 3}
       propertyPath: m_LocalPosition.x
