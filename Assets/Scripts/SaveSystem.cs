@@ -10,7 +10,7 @@ public static class SaveSystem
 		BinaryFormatter formatter = new BinaryFormatter();
 		string fileName = $"player_{DateTime.Now:yyyyMMdd_HHmmss}.save";
 		string path = Path.Combine(Application.persistentDataPath, fileName);
-		Debug.Log($"Saving to {path}");
+		// Debug.Log($"Saving to {path}");
 		FileStream stream = new FileStream(path, FileMode.Create);
 
 		PlayerData data = new PlayerData(player);

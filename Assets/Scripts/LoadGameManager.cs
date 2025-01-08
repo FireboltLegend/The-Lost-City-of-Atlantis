@@ -12,7 +12,7 @@ public class LoadGameManager : MonoBehaviour
 	[SerializeField] private PlayerController player;
 	[SerializeField] private GameObject saveFilePrefab;
 	[SerializeField, ReadOnly(true)] public GameObject selSaveFile;
-	[SerializeField, ReadOnly(true)] private List<GameObject> saveFiles;
+	[SerializeField, ReadOnly(true)] public List<GameObject> saveFiles;
 	[SerializeField] private Sprite normBar;
 
 	// Start is called before the first frame update

@@ -87835,6 +87835,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PlayerController, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 7637586098179766687, guid: f1ae573d5f83e7e478b8253f2acc1285,
+        type: 3}
+      propertyPath: saveFilePrefab
+      value: 
+      objectReference: {fileID: 7837103921587658449, guid: 85554224b180daf4f994b241f4e83498,
+        type: 3}
+    - target: {fileID: 7637586098179766687, guid: f1ae573d5f83e7e478b8253f2acc1285,
+        type: 3}
+      propertyPath: loadGameManager
+      value: 
+      objectReference: {fileID: 328121510}
     - target: {fileID: 8858220786732473414, guid: f1ae573d5f83e7e478b8253f2acc1285,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -87896,6 +87907,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 328121508}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &328121510 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4441847167379607162, guid: f1ae573d5f83e7e478b8253f2acc1285,
+    type: 3}
+  m_PrefabInstance: {fileID: 328121508}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d3e981e616ee54ca297902170aeed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &347408127
 PrefabInstance:
   m_ObjectHideFlags: 0
