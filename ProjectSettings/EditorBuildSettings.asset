@@ -56,4 +56,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Death.unity
     guid: 45a31cba8afb10548b4379fc7069a752
+  - enabled: 1
+    path: Assets/Level4.unity
+    guid: a2b3bf8ac8cf54917aa1e465f6899cde
+  - enabled: 1
+    path: Assets/Level4.unity
+    guid: c06b2508db07c45c3905ab3924d11b5e
+  - enabled: 1
+    path: Assets/Level4.unity
+    guid: cb068e3c5ea80489d8f5206bfbabdc0f
+  - enabled: 1
+    path: Assets/Level4.unity
+    guid: 2b979166427754e71bf19deb6d23abab
+  - enabled: 1
+    path: Assets/Level4.unity
+    guid: ae507ddc36a674e2681c90aef4ae062b
+  - enabled: 1
+    path: Assets/NewScene.unity
+    guid: d067b5acd56ff4d28973e295cca600a0
   m_configObjects: {}
