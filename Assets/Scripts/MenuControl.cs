@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuControl : MonoBehaviour
 {
@@ -77,6 +78,23 @@ public class MenuControl : MonoBehaviour
 	public void StartGame()
 	{
 		UnityEngine.SceneManagement.SceneManager.LoadScene("Level 01");
+		SceneManager.sceneLoaded += (scene, mode) =>
+		{
+			PlayerController player = FindObjectOfType<PlayerController>();
+			if(player != null)
+			{
+				player.level = 1;
+				// Debug.Log(data.position[0] + " " + data.position[1] + " " + data.position[2]);
+				player.transform.position = new Vector3(0, 0, 0);
+				player.health = 100;
+				player.oxygen = 100;
+			}
+			else
+			{
+				Debug.LogError("Level Couldn't be Loaded");
+			}
+			SceneManager.sceneLoaded -= (scene, mode) => { }; 
+		};
 	}
 
 	public void LoadMainMenu()
