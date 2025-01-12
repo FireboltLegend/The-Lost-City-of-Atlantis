@@ -63,14 +63,14 @@ public class WeaponManager : MonoBehaviour
                 }
                 break;
             case 3:
-                if (Input.GetKeyDown(KeyCode.F))
+                if (Input.GetKeyDown(KeyCode.F) && !spear.activeInHierarchy)
                 {
                     StopCoroutine(JabSpear());
                     StartCoroutine(JabSpear());
                 }
                 break;
             case 4:
-                if (Input.GetKeyDown(KeyCode.F))
+                if (Input.GetKeyDown(KeyCode.F) && !trident.activeInHierarchy)
                 {
                     StopCoroutine(JabTrident());
                     StartCoroutine(JabTrident());
