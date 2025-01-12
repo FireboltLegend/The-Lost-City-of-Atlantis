@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private float groundedBuffer;
     private float damageTimer;
 
-    private bool swimming;
+    [HideInInspector] public bool swimming;
     private Transform currentPlatform;
 
 	private void Start()
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            oxygen -= 0.75f * Time.deltaTime;
+            oxygen -= 1.5f * Time.deltaTime;
             oxygen = Mathf.Clamp(oxygen, 0, 100);
         }
         if (oxygen == 0)

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4729884448308954854}
   - component: {fileID: 8053025124962462867}
   - component: {fileID: 7689056279487416052}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Crusher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a900fa59cae64a199ab28b4134b8263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 40
   continuous: 0
 --- !u!1 &3027209713047029551
 GameObject:
@@ -200,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2932794262911392727}
   - component: {fileID: 5504588025458483641}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
