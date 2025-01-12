@@ -1169,8 +1169,9 @@ MonoBehaviour:
   mainMenu: {fileID: 5282395062148393309}
   loadGameMenu: {fileID: 5975732715380856632}
   controlMenu: {fileID: 8456914276619262135}
-  saveFilePrefab: {fileID: 0}
-  loadGameManager: {fileID: 0}
+  saveFilePrefab: {fileID: 7837103921587658449, guid: 85554224b180daf4f994b241f4e83498,
+    type: 3}
+  loadGameManager: {fileID: 4441847167379607162}
 --- !u!1 &832665615575357251
 GameObject:
   m_ObjectHideFlags: 0
