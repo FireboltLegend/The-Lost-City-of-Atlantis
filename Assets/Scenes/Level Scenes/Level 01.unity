@@ -16063,6 +16063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Level 02
+  startPosition: {x: -76.8, y: 6.3, z: 0}
 --- !u!1001 &114223476
 PrefabInstance:
   m_ObjectHideFlags: 0
