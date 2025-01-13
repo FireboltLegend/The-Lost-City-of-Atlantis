@@ -7,6 +7,7 @@ public class SceneSwitcher : MonoBehaviour
 {
     [SerializeField] private string sceneName;
     [SerializeField] private Vector3 startPosition;
+    [SerializeField] private int nextLevel;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,7 +17,7 @@ public class SceneSwitcher : MonoBehaviour
 			PlayerController player = FindObjectOfType<PlayerController>();
 			if(player != null)
 			{
-				player.level = 2;
+				player.level = nextLevel;
 				// Debug.Log(data.position[0] + " " + data.position[1] + " " + data.position[2]);
 				player.transform.position = startPosition;
 				player.health = 100;
