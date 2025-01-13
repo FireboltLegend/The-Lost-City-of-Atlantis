@@ -16063,8 +16063,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Level 02
-  startPosition: {x: -76.8, y: 6.3, z: 0}
-  nextLevel: 2
 --- !u!1001 &114223476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88225,7 +88223,7 @@ Transform:
   m_GameObject: {fileID: 362015091}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 242.7, y: -10.4, z: -10}
+  m_LocalPosition: {x: 430.2, y: 15.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -100693,12 +100691,12 @@ PrefabInstance:
     - target: {fileID: 691129348522821992, guid: 6f8c694acca4f4fe8901b7eb3a4da0af,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.5
+      value: -2.2
       objectReference: {fileID: 0}
     - target: {fileID: 691129348522821992, guid: 6f8c694acca4f4fe8901b7eb3a4da0af,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.19
+      value: -1.3
       objectReference: {fileID: 0}
     - target: {fileID: 691129348522821992, guid: 6f8c694acca4f4fe8901b7eb3a4da0af,
         type: 3}

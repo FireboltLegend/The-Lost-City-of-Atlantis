@@ -42,7 +42,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Test Scenes/Menu Test.unity
     guid: b2a358f9003e141d58f49d6faed6369c
   - enabled: 1
-    path: Assets/Scenes/Level Scenes/Level 01.unity
+    path: Assets/Scenes/Level Scenes/Level 01b.unity
     guid: ebc51c18fbf9146abba1301e9063e536
   - enabled: 0
     path: Assets/Scenes/Test Scenes/Level 4.unity
@@ -75,12 +75,12 @@ EditorBuildSettings:
     path: Assets/NewScene.unity
     guid: d067b5acd56ff4d28973e295cca600a0
   - enabled: 1
-    path: Assets/Scenes/Level Scenes/Level 04.unity
+    path: Assets/Scenes/Level Scenes/Level 04b.unity
     guid: 6ab20aab3cb3e7c4e9671038ff12a14b
   - enabled: 1
-    path: Assets/Scenes/Level Scenes/Level 02.unity
+    path: Assets/Scenes/Level Scenes/Level 02b.unity
     guid: 87456646cebea4968ad374b33ccda225
   - enabled: 1
-    path: Assets/Scenes/Level Scenes/Level 03.unity
+    path: Assets/Scenes/Level Scenes/Level 03b.unity
     guid: 322d7f5147fba4aae8e5ebef47128c7f
   m_configObjects: {}
