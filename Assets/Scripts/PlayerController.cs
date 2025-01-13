@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float invincibilityTime;
     [SerializeField] public int level;
 	[SerializeField] private GameObject pauseMenu;
+	[SerializeField] private GameObject audioSource;
 
 	private Rigidbody2D rb;
 	private Animator animator;
@@ -70,6 +71,7 @@ public class PlayerController : MonoBehaviour
 		if(Input.GetKeyDown(KeyCode.P))
 		{
 			pauseMenu.SetActive(true);
+			audioSource.SetActive(false);
 		}
 	}
 
@@ -97,6 +99,7 @@ public class PlayerController : MonoBehaviour
 	public void Resume()
 	{
 		pauseMenu.SetActive(false);
+		audioSource.SetActive(true);
 	}
 
 	private void Run()
