@@ -53,6 +53,10 @@ Save Files are stored in the user’s data path folder. The game retrieves the s
 * Setting and Challenges: Similar to the first two levels but with increased difficulty and additional obstacles.
 * Objective: Continue navigating through the ruins and trenches and avoid the crabs.
 
+**Level 5:**
+* Setting and Challenges: An arena with a pool of water to fight the Leviathan.
+* Objective: Defeat the Leviathan using the weapons provided to the player.
+
 # 4. Key Features #
 
 1. **Underwater Exploration:** <br/>
