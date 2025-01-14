@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Leviathan_Behavior : MonoBehaviour
 {
@@ -13,8 +15,9 @@ public class Leviathan_Behavior : MonoBehaviour
     public Transform firePoint; // Where the projectiles spawn
     public float shootInterval = 2f; // Time between shots
 
-    private float shootTimer; // Timer for shooting
+    [SerializeField, ReadOnly(true)] private float shootTimer; // Timer for shooting
     private Vector3 targetPosition; // The position the enemy moves to
+    [SerializeField] private EnemyHealth enemyHealth; // Reference to the enemy's health
 
     void Start()
     {
@@ -28,9 +31,14 @@ public class Leviathan_Behavior : MonoBehaviour
     {
         if (player != null)
         {
-            FollowPlayerWithDelay();
+            // FollowPlayerWithDelay();
             HandleShooting();
         }
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.LoadScene("Victory");
     }
 
     void FollowPlayerWithDelay()
