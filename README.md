@@ -7,6 +7,9 @@
 **Game Objective:**
 Players dive into the underwater ruins of Atlantis. They must avoid underwater hazards, including different enemies at each level to succeed in their journey.
 
+**How to Play:**
+Download the “The Lost City of Atlantis.zip” file in the drive. In your file explorer, right-click on the zip file and extract all. Open the unzipped folder and double-click on the .exe file to launch the game.
+
 # 2. Menu Screen #
 
 The menu screen gives various options. These include: <br/>
